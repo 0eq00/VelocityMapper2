@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptLabel" id="Title" x="0.0" y="0.0" width="200.0" height="30.0"
+             text="VelocityMapper HISE" textColour="4289053880" fontName="Default"
+             fontSize="20.0" fontStyle="Bold" alignment="left"/>
+  <Component type="ScriptSlider" id="LowKey" x="10.0" y="30.0" width="120.0"
+             height="50.0" text="Low Key" max="127.0" stepSize="1.0"/>
+  <Component type="ScriptSlider" id="HiKey" x="140.0" y="30.0" width="120.0"
+             height="50.0" text="Hi Key" defaultValue="127.0" max="127.0"
+             stepSize="1.0"/>
+  <Component type="ScriptTable" id="VelocityTable" x="10.0" y="80.0" width="290.0"
+             height="270.0" processorId="VelocityModulator"/>
+  <Component type="ScriptSlider" id="InputVelocity" x="10.0" y="350.0" width="290.0"
+             height="20.0" text="Input" saveInPreset="0" style="Horizontal"
+             max="127.0" stepSize="1.0"/>
+  <Component type="ScriptSlider" id="OutputVelocity" x="300.0" y="80.0" width="30.0"
+             height="270.0" text="Output" saveInPreset="0" style="Vertical"
+             max="127.0" stepSize="1.0"/>
+  <Component type="ScriptButton" id="ResetTable" x="220.0" y="380.0" width="80.0"
+             height="30.0" isMomentary="1" saveInPreset="0" text="Reset"/>
+  <Component type="ScriptButton" id="ExportBase64" x="340.0" y="80.0" width="80.0"
+             height="30.0" isMomentary="1" saveInPreset="0" text="Export"/>
+  <Component type="ScriptButton" id="ImportBase64" x="340.0" y="120.0" width="80.0"
+             height="30.0" isMomentary="1" saveInPreset="0" text="Import"/>
+  <Component type="ScriptLabel" id="Base64Label" x="430.0" y="80.0" width="160.0"
+             height="130.0" alignment="topLeft" bgColour="4212199697" itemColour="1442840575"
+             itemColour2="1442840575" text=""/>
+  <Component type="ScriptButton" id="ExportText" x="340.0" y="220.0" width="80.0"
+             height="30.0" isMomentary="1" saveInPreset="0" text="Export"/>
+  <Component type="ScriptButton" id="ImportText" x="340.0" y="260.0" width="80.0"
+             height="30.0" isMomentary="1" saveInPreset="0" text="Import"/>
+  <Component type="ScriptLabel" id="TextLabel" x="430.0" y="220.0" width="160.0"
+             height="130.0" alignment="topLeft" bgColour="4212199697" itemColour="1442840575"
+             itemColour2="1442840575" text="" multiline="1"/>
+  <Component type="ScriptSlider" id="AdjustSlider" x="430.0" y="360.0" width="120.0"
+             height="50.0" defaultValue="1.0" max="2.0" saveInPreset="0" text="Adjust"/>
+  <Component type="ScriptButton" id="PresetButton" x="510.0" y="40.0" width="80.0"
+             height="30.0" text="Preset" saveInPreset="0"/>
+  <Component type="ScriptFloatingTile" id="PresetBrowser" x="10.0" y="80.0"
+             width="580.0" height="330.0" ContentType="PresetBrowser" itemColour="4294967295"
+             itemColour2="0" Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowSearchBar&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;FullPathFavorites&quot;: false,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 3,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
+             bgColour="4279308561" visible="0"/>
+  <Component type="ScriptFloatingTile" id="Version" x="440.0" y="420.0" width="160"
+             height="40" ContentType="AboutPagePanel" bgColour="0" itemColour="4294967295"
+             itemColour2="0" Data="{&#10;  &quot;CopyrightNotice&quot;: &quot;0&quot;,&#10;  &quot;ShowLicensedEmail&quot;: false,&#10;  &quot;ShowVersion&quot;: false,&#10;  &quot;BuildDate&quot;: true,&#10;  &quot;WebsiteURL&quot;: &quot;1&quot;,&#10;  &quot;ShowProductName&quot;: false,&#10;  &quot;UseCustomImage&quot;: false&#10;}"
+             FontSize="12.0"/>
+  <Component type="ScriptFloatingTile" id="Version1" x="520.0" y="10.0" width="80"
+             height="30" ContentType="AboutPagePanel" bgColour="0" itemColour="4294967295"
+             itemColour2="0" Data="{&#10;  &quot;CopyrightNotice&quot;: &quot;0&quot;,&#10;  &quot;ShowLicensedEmail&quot;: false,&#10;  &quot;ShowVersion&quot;: true,&#10;  &quot;BuildDate&quot;: true,&#10;  &quot;WebsiteURL&quot;: &quot;1&quot;,&#10;  &quot;ShowProductName&quot;: false,&#10;  &quot;UseCustomImage&quot;: false&#10;}"
+             FontSize="12.0"/>
+</ContentProperties>

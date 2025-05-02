@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptLabel" id="Title" x="0.0" y="0.0" width="200.0" height="30.0"
+             text="VelocityMapper HISE" textColour="4289053880" fontName="Default"
+             fontSize="20.0" fontStyle="Bold" alignment="left"/>
+  <Component type="ScriptSlider" id="LowKey" x="10.0" y="30.0" width="120.0"
+             height="50.0" text="Low Key" max="127.0" stepSize="1.0"/>
+  <Component type="ScriptSlider" id="HiKey" x="140.0" y="30.0" width="120.0"
+             height="50.0" text="Hi Key" defaultValue="127.0" max="127.0"
+             stepSize="1.0"/>
+  <Component type="ScriptTable" id="VelocityTable" x="10.0" y="80.0" width="290.0"
+             height="270.0" processorId="VelocityModulator"/>
+  <Component type="ScriptSlider" id="InputVelocity" x="10.0" y="350.0" width="290.0"
+             height="20.0" text="Input" saveInPreset="0" style="Horizontal"
+             max="127.0" stepSize="1.0"/>
+  <Component type="ScriptSlider" id="OutputVelocity" x="300.0" y="80.0" width="30.0"
+             height="270.0" text="Output" saveInPreset="0" style="Vertical"
+             max="127.0" stepSize="1.0"/>
+  <Component type="ScriptButton" id="Ver2Button" x="330.0" y="50.0" width="80.0"
+             height="30.0" text="Ver.2" saveInPreset="0" radioGroup="1.0"
+             bgColour="16777215" itemColour2="1118481"/>
+  <Component type="ScriptButton" id="Ver1Button" x="410.0" y="50.0" width="80.0"
+             height="30.0" text="Ver.1" saveInPreset="0" radioGroup="1.0"
+             bgColour="16777215" itemColour2="1118481"/>
+  <Component type="ScriptButton" id="ResetTable" x="250.0" y="380.0" width="80.0"
+             height="30.0" isMomentary="1" saveInPreset="0" text="Reset"/>
+  <Component type="ScriptPanel" id="Ver2Panel" x="330.0" y="80.0" width="270.0"
+             height="340.0" itemColour="0" itemColour2="0" textColour="16777215">
+    <Component type="ScriptButton" id="ExportBase64" x="10.0" y="10.0" width="80.0"
+               height="30.0" isMomentary="1" saveInPreset="0" text="Export"
+               parentComponent="Ver2Panel"/>
+    <Component type="ScriptButton" id="ImportBase64" x="10.0" y="50.0" width="80.0"
+               height="30.0" isMomentary="1" saveInPreset="0" text="Import"
+               parentComponent="Ver2Panel"/>
+    <Component type="ScriptLabel" id="Base64Label" x="100.0" y="10.0" width="160.0"
+               height="140.0" alignment="topLeft" bgColour="4212199697" itemColour="1442840575"
+               itemColour2="1442840575" text="" parentComponent="Ver2Panel"/>
+    <Component type="ScriptButton" id="ExportText" x="10.0" y="160.0" width="80.0"
+               height="30.0" isMomentary="1" saveInPreset="0" text="Export"
+               parentComponent="Ver2Panel"/>
+    <Component type="ScriptButton" id="ImportText" x="10.0" y="200.0" width="80.0"
+               height="30.0" isMomentary="1" saveInPreset="0" text="Import"
+               parentComponent="Ver2Panel"/>
+    <Component type="ScriptLabel" id="TextLabel2" x="100.0" y="160.0" width="160.0"
+               height="140.0" alignment="topLeft" bgColour="4212199697" itemColour="1442840575"
+               itemColour2="1442840575" text="" parentComponent="Ver2Panel"
+               multiline="1"/>
+  </Component>
+  <Component type="ScriptPanel" id="Ver1Panel" x="330.0" y="80.0" width="270.0"
+             height="340.0" itemColour="0" itemColour2="0" textColour="16777215"
+             visible="0">
+    <Component type="ScriptLabel" id="FileNameLabel" x="10.0" y="0.0" width="250.0"
+               height="30.0" parentComponent="Ver1Panel" saveInPreset="1" alignment="left"
+               text="" bgColour="4212199697" itemColour="1442840575" itemColour2="1442840575"/>
+    <Component type="ScriptLabel" id="TextLabel" x="10.0" y="80.0" width="250.0"
+               height="150.0" alignment="topLeft" bgColour="4212199697" itemColour="1442840575"
+               itemColour2="1442840575" text="" multiline="1" parentComponent="Ver1Panel"/>
+    <Component type="ScriptButton" id="LoadFile" x="10.0" y="40.0" width="80.0"
+               height="30.0" isMomentary="1" saveInPreset="0" text="Load" parentComponent="Ver1Panel"/>
+    <Component type="ScriptButton" id="SaveFile" x="180.0" y="40.0" width="80.0"
+               height="30.0" isMomentary="1" saveInPreset="0" text="Save" parentComponent="Ver1Panel"/>
+    <Component type="ScriptSlider" id="Factor" x="10.0" y="240.0" width="120.0"
+               height="50.0" parentComponent="Ver1Panel" defaultValue="1.0"
+               max="2.0" stepSize="0.1000000014901161"/>
+    <Component type="ScriptSlider" id="Center" x="140.0" y="240.0" width="120.0"
+               height="50.0" parentComponent="Ver1Panel" defaultValue="64.0"
+               min="1.0" max="127.0" stepSize="1.0"/>
+  </Component>
+</ContentProperties>
