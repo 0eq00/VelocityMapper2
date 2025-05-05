@@ -11,7 +11,7 @@
           <Content>
             <Control type="ScriptSlider" id="LowKey" value="0.0"/>
             <Control type="ScriptSlider" id="HiKey" value="127.0"/>
-            <Control type="ScriptTable" id="VelocityTable" value="0.0" data=""/>
+            <Control type="ScriptTable" id="VelocityTable" value="0.0" data="24...............vO...f+f+988C...vO"/>
           </Content>
           <UIData Source="VelocityMapper2UIData"/>
         </Processor>
@@ -36,7 +36,7 @@
         <Processor Type="ModulatorChain" ID="Global Modulators" Bypassed="0" Intensity="1.0">
           <ChildProcessors>
             <Processor Type="Velocity" ID="VelocityModulator" Bypassed="1" Intensity="1.0"
-                       Bipolar="0" UseTable="1.0" Inverted="0.0" DecibelMode="0.0" VelocityTableData="">
+                       Bipolar="0" UseTable="1.0" Inverted="0.0" DecibelMode="0.0" VelocityTableData="24...............vO...f+f+988C...vO">
               <ChildProcessors/>
             </Processor>
           </ChildProcessors>

@@ -24,6 +24,7 @@ const var ExportText = Content.getComponent("ExportText");
 const var ImportText = Content.getComponent("ImportText");
 const var TextLabel  = Content.getComponent("TextLabel");
 const var AdjustSlider = Content.getComponent("AdjustSlider");
+AdjustSlider.setValue(1);
 
 function exportText()
 {

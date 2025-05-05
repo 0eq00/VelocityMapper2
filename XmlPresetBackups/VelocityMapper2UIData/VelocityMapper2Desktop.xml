@@ -41,12 +41,12 @@
              width="580.0" height="330.0" ContentType="PresetBrowser" itemColour="4294967295"
              itemColour2="0" Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowSearchBar&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;FullPathFavorites&quot;: false,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 3,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
              bgColour="4279308561" visible="0"/>
-  <Component type="ScriptFloatingTile" id="Version" x="440.0" y="420.0" width="160"
-             height="40" ContentType="AboutPagePanel" bgColour="0" itemColour="4294967295"
+  <Component type="ScriptFloatingTile" id="Version1" x="440.0" y="420.0" width="160.0"
+             height="40.0" ContentType="AboutPagePanel" bgColour="0" itemColour="4294967295"
              itemColour2="0" Data="{&#10;  &quot;CopyrightNotice&quot;: &quot;0&quot;,&#10;  &quot;ShowLicensedEmail&quot;: false,&#10;  &quot;ShowVersion&quot;: false,&#10;  &quot;BuildDate&quot;: true,&#10;  &quot;WebsiteURL&quot;: &quot;1&quot;,&#10;  &quot;ShowProductName&quot;: false,&#10;  &quot;UseCustomImage&quot;: false&#10;}"
              FontSize="12.0"/>
-  <Component type="ScriptFloatingTile" id="Version1" x="520.0" y="10.0" width="80"
-             height="30" ContentType="AboutPagePanel" bgColour="0" itemColour="4294967295"
+  <Component type="ScriptFloatingTile" id="Version2" x="520.0" y="10.0" width="80.0"
+             height="30.0" ContentType="AboutPagePanel" bgColour="0" itemColour="4294967295"
              itemColour2="0" Data="{&#10;  &quot;CopyrightNotice&quot;: &quot;0&quot;,&#10;  &quot;ShowLicensedEmail&quot;: false,&#10;  &quot;ShowVersion&quot;: true,&#10;  &quot;BuildDate&quot;: true,&#10;  &quot;WebsiteURL&quot;: &quot;1&quot;,&#10;  &quot;ShowProductName&quot;: false,&#10;  &quot;UseCustomImage&quot;: false&#10;}"
              FontSize="12.0"/>
 </ContentProperties>
