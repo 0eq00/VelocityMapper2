@@ -1,5 +1,12 @@
 Content.makeFrontInterface(600, 460);
 
+const var OptionButton = Content.getComponent("OptionButton");
+const var MainPanel = Content.getComponent("MainPanel");
+const var OptionPanel = Content.getComponent("OptionPanel");
+OptionButton.setValue(0);
+MainPanel.set("visible",true);
+OptionPanel.set("visible",false);
+
 const var PresetButton = Content.getComponent("PresetButton");
 const var PresetBrowser = Content.getComponent("PresetBrowser");
 PresetButton.setValue(0);
@@ -137,6 +144,11 @@ function adjust()
 		VelocityModulatorTable.setTablePointsFromArray(array);
 	}
 }
+
+const var CC67Slider = Content.getComponent("CC67Slider");
+const var SoftOutSlider = Content.getComponent("SoftOutSlider");
+const var SoftPedalButton = Content.getComponent("SoftPedalButton");
+const var SoftVelocitySlider = Content.getComponent("SoftVelocitySlider");
 function onNoteOn()
 {
 	local number = Message.getNoteNumber();
@@ -150,6 +162,19 @@ function onNoteOn()
 
 		InputVelocity.setValue( velocity );
 		OutputVelocity.setValue(mappedVelocity);
+
+		// Soft Pedal
+		if ( SoftPedalButton.getValue() > 0 )
+		{
+			if ( CC67Slider.getValue() > 64 )
+			{
+				mappedVelocity = mappedVelocity + SoftVelocitySlider.getValue();
+			}
+		}
+		SoftOutSlider.setValue( mappedVelocity );
+
+		if ( mappedVelocity < 1 )
+			mappedVelocity = 1;
 		Message.setVelocity(mappedVelocity);
 	}
 
@@ -157,10 +182,19 @@ function onNoteOn()
 }
  function onNoteOff()
 {
-	Message.sendToMidiOut();	
+	Message.sendToMidiOut();		
 }
  function onController()
 {
+	local number = Message.getControllerNumber();
+
+	switch(number)
+	{
+		case 67:
+			CC67Slider.setValue(Message.getControllerValue());
+			break;
+	}
+
 	Message.sendToMidiOut();
 }
  function onTimer()
@@ -208,6 +242,18 @@ function onNoteOn()
 			break;
 		case AdjustSlider:
 			adjust();
+			break;
+		case OptionButton:
+			if ( value > 0 )
+			{
+				OptionPanel.set("visible",true);
+				MainPanel.set("visible",false);
+			}
+			else
+			{
+				OptionPanel.set("visible",false);
+				MainPanel.set("visible",true);
+			}
 			break;
 		case PresetButton:
 			if ( value > 0 )
