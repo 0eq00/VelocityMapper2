@@ -69,6 +69,9 @@
                  width="120.0" height="50.0" parentComponent="SoftPedalPanel"
                  text="Velocity" max="0.0" stepSize="1.0" middlePosition="-63.5"
                  defaultValue="-8.0" min="-127.0"/>
+      <Component type="ScriptButton" id="DiscardCC67Button" x="20.0" y="240.0"
+                 width="110.0" height="30.0" parentComponent="SoftPedalPanel"
+                 text="Discard CC67"/>
     </Component>
   </Component>
   <Component type="ScriptButton" id="PresetButton" x="510.0" y="40.0" width="80.0"

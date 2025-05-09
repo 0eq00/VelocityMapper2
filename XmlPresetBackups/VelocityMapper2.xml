@@ -14,6 +14,7 @@
             <Control type="ScriptTable" id="VelocityTable" value="0.0" data="24...............vO...f+f+988C...vO"/>
             <Control type="ScriptButton" id="SoftPedalButton" value="0.0"/>
             <Control type="ScriptSlider" id="SoftVelocitySlider" value="-8.0"/>
+            <Control type="ScriptButton" id="DiscardCC67Button" value="0.0"/>
           </Content>
           <UIData Source="VelocityMapper2UIData"/>
         </Processor>

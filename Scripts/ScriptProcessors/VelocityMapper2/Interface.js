@@ -149,6 +149,7 @@ const var CC67Slider = Content.getComponent("CC67Slider");
 const var SoftOutSlider = Content.getComponent("SoftOutSlider");
 const var SoftPedalButton = Content.getComponent("SoftPedalButton");
 const var SoftVelocitySlider = Content.getComponent("SoftVelocitySlider");
+const var DiscardCC67Button = Content.getComponent("DiscardCC67Button");
 function onNoteOn()
 {
 	local number = Message.getNoteNumber();
@@ -188,14 +189,14 @@ function onNoteOn()
 {
 	local number = Message.getControllerNumber();
 
-	switch(number)
+	if ( number == 67 )
 	{
-		case 67:
-			CC67Slider.setValue(Message.getControllerValue());
-			break;
+		CC67Slider.setValue(Message.getControllerValue());
+		if ( DiscardCC67Button.getValue() < 1 )
+			Message.sendToMidiOut();
 	}
-
-	Message.sendToMidiOut();
+	else
+		Message.sendToMidiOut();
 }
  function onTimer()
 {
