@@ -15,6 +15,7 @@
             <Control type="ScriptButton" id="SoftPedalButton" value="0.0"/>
             <Control type="ScriptSlider" id="SoftVelocitySlider" value="-8.0"/>
             <Control type="ScriptButton" id="DiscardCC67Button" value="0.0"/>
+            <Control type="ScriptButton" id="SostenutoPedalButton" value="0.0"/>
           </Content>
           <UIData Source="VelocityMapper2UIData"/>
         </Processor>
@@ -45,6 +46,32 @@
           </ChildProcessors>
         </Processor>
         <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="SilentSynth" ID="Silent Synth1" Bypassed="0" Gain="0.0"
+               Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors>
+            <Processor Type="ScriptProcessor" ID="Script Processor1" Bypassed="0">
+              <ChildProcessors/>
+              <Content/>
+              <UIData>
+                <ContentProperties DeviceType="Desktop"/>
+              </UIData>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="1" Intensity="1.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
           <ChildProcessors/>
         </Processor>
         <Processor Type="EffectChain" ID="FX" Bypassed="0">

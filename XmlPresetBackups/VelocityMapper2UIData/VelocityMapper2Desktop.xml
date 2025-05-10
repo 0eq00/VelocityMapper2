@@ -73,6 +73,16 @@
                  width="110.0" height="30.0" parentComponent="SoftPedalPanel"
                  text="Discard CC67"/>
     </Component>
+    <Component type="ScriptPanel" id="SostenutoPedalPanel" x="300.0" y="10.0"
+               width="275.0" height="310.0" parentComponent="OptionPanel">
+      <Component type="ScriptButton" id="SostenutoPedalButton" x="0.0" y="0.0"
+                 width="120.0" height="30.0" text="Sostenuto Pedal" parentComponent="SostenutoPedalPanel"
+                 itemColour="3355443" itemColour2="1118481" bgColour="16777215"/>
+      <Component type="ScriptSlider" id="CC66Slider" x="10.0" y="20.0" width="120.0"
+                 height="50.0" parentComponent="SostenutoPedalPanel" text="CC66"
+                 saveInPreset="0" max="127.0" stepSize="1.0" middlePosition="63.5"
+                 enabled="0"/>
+    </Component>
   </Component>
   <Component type="ScriptButton" id="PresetButton" x="510.0" y="40.0" width="80.0"
              height="30.0" text="Preset" saveInPreset="0"/>

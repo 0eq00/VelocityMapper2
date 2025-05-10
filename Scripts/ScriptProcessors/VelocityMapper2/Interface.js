@@ -145,11 +145,29 @@ function adjust()
 	}
 }
 
+// Soft Pedal
 const var CC67Slider = Content.getComponent("CC67Slider");
 const var SoftOutSlider = Content.getComponent("SoftOutSlider");
 const var SoftPedalButton = Content.getComponent("SoftPedalButton");
 const var SoftVelocitySlider = Content.getComponent("SoftVelocitySlider");
 const var DiscardCC67Button = Content.getComponent("DiscardCC67Button");
+
+// Sostenuto Pedal
+const var CC66Slider = Content.getComponent("CC66Slider");
+const var SostenutoPedalButton = Content.getComponent("SostenutoPedalButton");
+var keyOn = [];
+var sosOn = [];
+
+function initializeSostenuto()
+{
+	for ( i = 0 ; i < 127 ; i++ )
+	{
+		keyOn[i] = false;
+		sosOn[i] = false;
+	}
+}
+initializeSostenuto();
+
 function onNoteOn()
 {
 	local number = Message.getNoteNumber();
@@ -174,6 +192,12 @@ function onNoteOn()
 		}
 		SoftOutSlider.setValue( mappedVelocity );
 
+		// Sostenuto Pedal
+		if ( SostenutoPedalButton.getValue() > 0 )
+		{
+			keyOn[number] = true;			
+		}
+
 		if ( mappedVelocity < 1 )
 			mappedVelocity = 1;
 		Message.setVelocity(mappedVelocity);
@@ -183,16 +207,60 @@ function onNoteOn()
 }
  function onNoteOff()
 {
-	Message.sendToMidiOut();		
+	// Sostenuto Pedal
+	if ( SostenutoPedalButton.getValue() > 0 )
+	{
+		local number = Message.getNoteNumber();
+		keyOn[number] = false;
+		
+//		Console.print("onNoteOff sosOn["+sosOn[number]+"]");
+		if (sosOn[number] == false)
+			Message.sendToMidiOut();
+		
+		Message.ignoreEvent(true);		
+	}
+	else
+		Message.sendToMidiOut();		
 }
  function onController()
 {
 	local number = Message.getControllerNumber();
+	local value = Message.getControllerValue();
 
+	// Soft Pedal
 	if ( number == 67 )
 	{
-		CC67Slider.setValue(Message.getControllerValue());
+		CC67Slider.setValue(value);
 		if ( DiscardCC67Button.getValue() < 1 )
+			Message.sendToMidiOut();
+	}
+	// Sostenuto Pedal
+	else if ( number == 66 )
+	{
+		CC66Slider.setValue(value);
+		if ( SostenutoPedalButton.getValue() > 0 )
+		{
+			if ( value > 64 )
+			{
+				for ( i = 0 ; i < 127 ; i++ )
+				{
+					sosOn[i] = keyOn[i];
+				}
+			}
+			else
+			{		
+				for ( i = 0 ; i < 127 ; i++ )
+				{
+					if ( sosOn[i] == true && keyOn[i] == false )
+					{
+						local myID = Synth.playNote(i, 127);
+						Synth.noteOffByEventId(myID);
+					}
+					sosOn[i] = false;
+				}
+			}
+		}
+		else
 			Message.sendToMidiOut();
 	}
 	else
@@ -261,7 +329,10 @@ function onNoteOn()
 				PresetBrowser.set("visible",true);
 			else
 				PresetBrowser.set("visible",false);
-			break;			
+			break;
+		case SostenutoPedalButton:
+			initializeSostenuto();
+			break;
 	}
 }
  
